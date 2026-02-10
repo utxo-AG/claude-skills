@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "railway": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-railway"],
+      "env": {
+        "RAILWAY_API_TOKEN": "your-railway-token"
+      }
+    },
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "mcp-obsidian"],
+      "env": {
+        "OBSIDIAN_VAULT_PATH": "/path/to/your/vault"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-github"],
+      "env": {
+        "GITHUB_TOKEN": "your-github-token"
+      }
+    },
+    "google-docs": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-google-docs"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "your-client-id",
+        "GOOGLE_CLIENT_SECRET": "your-client-secret"
+      }
+    },
+    "sokosumi": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.sokosumi.com/mcp"]
+    },
+    "stripe": {
+      "type": "http",
+      "url": "https://mcp.stripe.com"
+    }
+  }
+}

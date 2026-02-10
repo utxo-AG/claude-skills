@@ -1,80 +1,83 @@
-# Claude Code Skills & MCP Servers
+# Claude Code Coworkers
 
-A collection of skills and MCP server configurations for Claude Code.
+Your AI team for Claude Code. Each coworker has a specialty - call on them when you need their expertise.
 
-## Skills
+---
 
-| Skill | Description |
-|-------|-------------|
-| **cartographer** | Maps codebases using parallel subagents, creates `docs/CODEBASE_MAP.md` |
-| **design-principles** | Minimal design system inspired by Linear, Notion, Stripe |
-| **design-plugin** | Design and refine workflow with templates |
-| **email-best-practices** | Email deliverability, authentication, compliance guides |
-| **fal-ai** | Image/video/audio generation via fal.ai API |
-| **google-docs** | Google Docs, Sheets, Drive operations |
-| **obsidian-memory** | Knowledge persistence across sessions via Obsidian |
-| **obvious-communication** | Clear writing: lead with point, simple words |
-| **railway-deploy** | Railway deployment workflow |
-| **ralph-technique** | Large autonomous task execution |
-| **react-best-practices** | React/Next.js performance optimization (from Vercel) |
-| **react-email** | React Email templates for transactional emails |
-| **svg-logo-designer** | Professional SVG logo creation |
-| **ui-skills** | Opinionated UI constraints for agents |
-| **web-interface-guidelines** | Accessibility, interactions, layout, forms |
+## The Team
 
-## Installation
+### Engineering
 
-Copy skills to your Claude Code skills directory:
+| Coworker | Role | Call When |
+|:---------|:-----|:----------|
+| **Cartographer** | Codebase Analyst | "Map this codebase", "Document the architecture" |
+| **React Expert** | Performance Engineer | Writing React/Next.js, optimizing bundles, fixing rerenders |
+| **Ralph** | Project Manager | Large autonomous tasks, multi-step implementations |
+
+### Design
+
+| Coworker | Role | Call When |
+|:---------|:-----|:----------|
+| **Design Principles** | UI Architect | Building any interface - dashboards, forms, admin panels |
+| **UI Skills** | Interaction Designer | Animations, micro-interactions, responsive layouts |
+| **Web Guidelines** | Accessibility Lead | Forms, accessibility, content structure |
+| **SVG Logo Designer** | Brand Designer | Creating logos, icons, visual marks |
+
+### Communication
+
+| Coworker | Role | Call When |
+|:---------|:-----|:----------|
+| **Email Expert** | Deliverability Specialist | SPF/DKIM setup, avoiding spam, compliance |
+| **React Email** | Email Developer | Building email templates that render everywhere |
+| **Obvious Communication** | Technical Writer | Documentation, explanations, clear writing |
+
+### Infrastructure
+
+| Coworker | Role | Call When |
+|:---------|:-----|:----------|
+| **Railway Deploy** | DevOps Engineer | Deploying apps, managing environments |
+| **Google Docs** | Document Manager | Docs, Sheets, Drive operations |
+| **Obsidian Memory** | Knowledge Manager | Persisting context across sessions |
+
+### Creative
+
+| Coworker | Role | Call When |
+|:---------|:-----|:----------|
+| **Fal AI** | Media Generator | Images, video, audio generation |
+
+---
+
+## Quick Start
 
 ```bash
-# Clone the repo
 git clone https://github.com/utxo-AG/claude-skills.git
-
-# Copy skills to Claude Code
 cp -r claude-skills/* ~/.claude/skills/
 ```
 
-## MCP Servers
-
-See `mcp-servers/` for MCP server configurations. Add to your `~/.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "server-name": {
-      "command": "npx",
-      "args": ["-y", "package-name"]
-    }
-  }
-}
-```
-
-### Available MCP Servers
-
-| Server | Type | Description |
-|--------|------|-------------|
-| railway | stdio | Railway.app deployment management |
-| obsidian | stdio | Obsidian vault operations |
-| github | stdio | GitHub API operations |
-| google-docs | stdio | Google Docs/Sheets/Drive |
-| claude-in-chrome | stdio | Browser automation |
-| sokosumi | remote | Remote MCP via mcp-remote |
-| stripe | http | Stripe API operations |
-
-## Usage
-
-Skills are automatically loaded by Claude Code. Reference them in your `CLAUDE.md`:
+Then reference in your `CLAUDE.md`:
 
 ```markdown
-## Skills
+## Team
 
-| Skill | When to Use |
-|-------|-------------|
-| design-principles | ANY UI work |
-| react-best-practices | React/Next.js code |
-| railway-deploy | Deployments |
+- **Design Principles** → Any UI work
+- **React Expert** → React/Next.js code
+- **Railway Deploy** → Deployments
 ```
 
-## License
+---
 
-MIT
+## MCP Servers
+
+Infrastructure connections in `mcp-servers/example-config.json`:
+
+| Server | Purpose |
+|:-------|:--------|
+| railway | Deploy and manage Railway apps |
+| obsidian | Read/write Obsidian vault |
+| github | GitHub API operations |
+| google-docs | Docs, Sheets, Drive |
+| stripe | Payments integration |
+
+---
+
+MIT License
